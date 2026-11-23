@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Asset register</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14201D;background:#F4F6F5}
+a{color:#1A6B58}a:hover{color:#0F4A3D}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#E6EFEC;text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{background:#163C34;color:#FFFFFF}
+.nav a.on{background:#1F7A65;color:#FFFFFF}
+.tabs a{padding:12px 4px;margin-right:24px;text-decoration:none;color:#4F605B;font-weight:500;font-size:15px;border-bottom:2px solid transparent}
+.tabs a.on{color:#14201D;border-bottom-color:#1F7A65;font-weight:600}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:15px;font-weight:600;padding:0;margin-bottom:10px}
+.pick{display:flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid #DDE3E1;border-radius:10px;font-size:14px;cursor:pointer;background:#FFFFFF;min-height:44px;box-sizing:border-box}
+.pick.sel{border:2px solid #1F7A65;background:#F1F8F5;font-weight:600}
+.pick input,.chk input{accent-color:#1F7A65;width:18px;height:18px}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;min-height:36px}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.fl input,.fl select,.fl textarea{font:inherit;font-weight:400;font-size:14px;padding:11px 12px;border:1px solid #C9D3D0;border-radius:10px;background:#FFFFFF;color:#14201D;min-height:44px;box-sizing:border-box}
+.fl input[readonly]{background:#F1F4F3;color:#4F605B}
+.hint{font-size:13px;font-weight:400;color:#5B6B66}
+.auto{font-size:12px;font-weight:500;color:#17694F}
+.sec{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:18px}
+.sec h2{margin:0;font-size:18px;font-weight:600}
+.card{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card h2{margin:0;font-size:16px;font-weight:600}
+.tile{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:14px;padding:16px 20px;display:flex;flex-direction:column;gap:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.btn{font:inherit;font-size:15px;font-weight:600;padding:12px 20px;border-radius:10px;cursor:pointer;min-height:44px;text-decoration:none;display:inline-flex;align-items:center;box-sizing:border-box}
+.pri{background:#1F7A65;color:#FFFFFF;border:0}.pri:hover{color:#FFFFFF;background:#17604F}
+.sec2{background:#FFFFFF;color:#14201D;border:1px solid #C9D3D0}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.g{background:#E2F3EC;color:#17694F}.b{background:#E3EEFB;color:#1D4F91}.a{background:#FDF1DC;color:#8A5300}.r{background:#FBE4E2;color:#9B2C22}.n{background:#ECEFEE;color:#4F605B}
+th{text-align:left;font-size:12px;font-weight:600;color:#4F605B;text-transform:uppercase;letter-spacing:.04em;padding:11px 14px;border-bottom:1px solid #DDE3E1;background:#F9FBFA;white-space:nowrap}
+td{padding:13px 14px;border-bottom:1px solid #EEF2F0;font-size:14px;vertical-align:top}
+.row{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid #EEF2F0;border-radius:10px;font-size:14px}
+.ok{width:22px;height:22px;border-radius:50%;background:#1F7A65;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.no{width:22px;height:22px;border-radius:50%;background:#9B2C22;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.wait{width:22px;height:22px;border-radius:50%;border:2px solid #C9D3D0;box-sizing:border-box;flex:none}
+.note{font-size:14px;border-radius:12px;padding:14px 16px}
+dt{color:#5B6B66}dd{margin:0}
+</style></head>
+<body>
+<x-dc style="display: block;">
+
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh">
+  <aside style="flex: 1 1 240px; background: #0E2A24; padding: 20px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; gap: 12px; align-items: center; padding: 4px 6px">
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px">A</div>
+      <div>
+        <div style="color: #FFFFFF; font-weight: 700; font-size: 16px">Angels Resource Centre</div>
+        <div style="color: #A9C2BA; font-size: 12px">NPO Management System</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main" style="display: flex; flex-direction: column; gap: 2px">
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg><span style="flex: 1">Dashboard</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12l19-8-5 17-4-7z"></path></svg><span style="flex: 1">Travel Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v12H3zM3 11h18M16 15h2"></path></svg><span style="flex: 1">Finance Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg><span style="flex: 1">Document Control</span><span style="background: #2C4F47; color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px">127</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8"></path></svg><span style="flex: 1">Programme &amp; Impact</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg><span style="flex: 1">Planning</span></a>
+      
+        <a href="../index.html#/d/home-design" target="_top" class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4zM2 19h20"></path></svg><span style="flex: 1">Asset Management</span></a>
+      
+      <div style="color: #8FAAA2; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 18px 14px 6px">COMPLIANCE &amp; ADMIN</div>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path></svg><span>Audit Log</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8M2 21c0-4 3-6 7-6s7 2 7 6"></path></svg><span>User Management</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 2h9v10H3z"></path></svg><span>Projects</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 15a4 4 0 1 1 3-7h9v3h-2v2h-3v-2h-4"></path></svg><span>Permissions</span></a>
+      
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <div style="font-size: 13px; color: #5B6B66">Operations / Asset Management</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <h1 style="margin: 0; font-size: 28px; font-weight: 700">Asset register</h1>
+      </div>
+      <p style="margin: 0; font-size: 15px; color: #4F605B">Every item Angels holds: who has it, who paid, who owns it and who insures it.</p>
+    </div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap"><a href="#" class="btn sec2">Insurance schedule for broker</a><a href="#" class="btn sec2">Print QR labels</a><a href="#" class="btn pri">+ Add asset</a></div>
+    </div>
+    <nav class="tabs" aria-label="Asset Management sections" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #DDE3E1">
+      <a href="../index.html#/d/home-design" target="_top">Requests</a>
+      <a href="../index.html#/d/approval-design" target="_top">My approvals (2)</a>
+      <a href="../index.html#/d/store-design" target="_top">Training &amp; marketing store</a>
+      <a href="../index.html#/d/deliveries-design" target="_top">Deliveries</a>
+      <a href="../index.html#/d/incident-design" target="_top">Incidents</a>
+      <a href="../index.html#/d/donations-design" target="_top">Donations</a>
+      <a href="../index.html#/d/register-design" target="_top" class="on">Asset register</a>
+      <a href="../index.html#/d/reports-design" target="_top">Reports</a>
+    </nav>
+    <div role="search" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px">
+      <label class="fl">Search<input type="search" placeholder="Asset no., serial or person"></label>
+      <label class="fl">Category<select><option>All</option><option>Laptop</option><option>Monitor</option><option>Printer</option><option>Accessory</option><option>Training box</option><option>Marketing material</option></select></label>
+      <label class="fl">Funding<select><option>All</option><option>Angels</option><option>Scatec E4C</option><option>Scatec Y4C</option><option>Seriti Green</option><option>Donated in</option></select></label>
+      <label class="fl">Insurance<select><option>All</option><option>Angels insures</option><option>Client insures</option><option>Angels, client contributes</option><option>Not insured</option></select></label>
+      <label class="fl">Status<select><option>All</option><option>Issued</option><option>In store</option><option>Booked out</option><option>On loan</option><option>In repair</option><option>Donated out</option><option>Returned to client</option><option>Disposed</option></select></label>
+    </div>
+
+    <section style="background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 14px; overflow: hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px"><h2 style="margin: 0; font-size: 18px; font-weight: 600">Assets</h2><span class="hint">Sample data</span></div>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; border-collapse: collapse; min-width: 1120px">
+          <thead><tr><th>Asset no.</th><th>Item</th><th>With / location</th><th>Funding</th><th>Owner</th><th>Insurance</th><th>Status</th><th>Warranty</th></tr></thead>
+          <tbody>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-LAP-2026-015</td><td>Laptop · Design / Media</td><td>Design &amp; Media</td><td>Angels</td><td>Angels</td><td><span class="pill g">Angels insures</span></td><td><span class="pill n">Issued</span></td><td style="white-space: nowrap">Nov 2029</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-LAP-2026-022 · E4C</td><td>Laptop · Standard</td><td>E4C facilitator</td><td>Scatec E4C</td><td>Client · project ends [date]</td><td><span class="pill b">Client insures</span></td><td><span class="pill n">Issued</span></td><td style="white-space: nowrap">Dec 2029</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-LAP-2026-018</td><td>Laptop, 14-inch (donated)</td><td>Store</td><td>Donated · [Donor company]</td><td>Angels</td><td><span class="pill g">Angels insures</span></td><td><span class="pill a">Being wiped</span></td><td style="white-space: nowrap">—</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-MKT-PB-02</td><td>Pull-up banner, Scatec E4C</td><td>Store · Shelf B2</td><td>Scatec E4C</td><td>Client</td><td><span class="pill b">Client insures</span></td><td><span class="pill b">Booked out</span></td><td style="white-space: nowrap">—</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-TRN-TB-01</td><td>Training box 1</td><td>Store · Shelf A1</td><td>Angels</td><td>Angels</td><td><span class="pill n">Not insured</span></td><td><span class="pill b">Booked out</span></td><td style="white-space: nowrap">—</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-LAP-2021-007</td><td>Laptop · Standard</td><td>Loan pool</td><td>Angels</td><td>Angels</td><td><span class="pill g">Angels insures</span></td><td><span class="pill b">On loan</span></td><td style="white-space: nowrap">Expired</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-LAP-2021-003</td><td>Laptop · Standard</td><td>To [E4C enterprise]</td><td>Angels</td><td>Angels until signed</td><td><span class="pill g">Angels insures</span></td><td><span class="pill a">Donation pending</span></td><td style="white-space: nowrap">Expired</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-LAP-2026-030 · E4C</td><td>Laptop · Standard</td><td>Store</td><td>Scatec E4C</td><td>Client</td><td><span class="pill a">Angels, client contributes</span></td><td><span class="pill n">In store</span></td><td style="white-space: nowrap">Dec 2029</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">ARC-PRN-2024-002</td><td>Printer, desk</td><td>Finance (home office)</td><td>Angels</td><td>Angels</td><td><span class="pill g">Angels insures</span></td><td><span class="pill n">Issued</span></td><td style="white-space: nowrap">Jan 2027</td></tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+      <div class="card"><h2>Insurance schedule</h2><p style="margin: 0; font-size: 14px">The broker's schedule lists only items marked "Angels insures". Client-funded items never go on it unless HOF approves and a client contribution is recorded.</p></div>
+      <div class="card"><h2>Project assets</h2><p style="margin: 0; font-size: 14px">Flagged 30 days before the project's end date, so each one is returned, transferred or taken over by Angels.</p></div>
+      <div class="card"><h2>Annual asset check</h2><p style="margin: 0; font-size: 14px">Next: Feb 2027. Staff confirm the items they hold on screen; Anton spot-checks with the QR labels.</p></div>
+    </section>
+  </main>
+</div>
+</x-dc>
+
+
+
+
+</body></html>

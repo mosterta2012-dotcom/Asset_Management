@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>New asset request — what is needed</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14201D;background:#F4F6F5}
+a{color:#1A6B58}a:hover{color:#0F4A3D}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#E6EFEC;text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{background:#163C34;color:#FFFFFF}
+.nav a.on{background:#1F7A65;color:#FFFFFF}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:15px;font-weight:600;padding:0;margin-bottom:10px}
+.card{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #DDE3E1;border-radius:12px;background:#FFFFFF;cursor:pointer}
+.card.sel{border:2px solid #1F7A65;background:#F1F8F5;padding:13px 15px}
+.card input{margin-top:3px;accent-color:#1F7A65;width:18px;height:18px}
+.pick{display:flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid #DDE3E1;border-radius:10px;font-size:14px;cursor:pointer;background:#FFFFFF;min-height:44px;box-sizing:border-box}
+.pick.sel{border:2px solid #1F7A65;background:#F1F8F5;font-weight:600}
+.pick input{accent-color:#1F7A65}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.fl input,.fl select,.fl textarea{font:inherit;font-weight:400;font-size:14px;padding:11px 12px;border:1px solid #C9D3D0;border-radius:10px;background:#FFFFFF;color:#14201D;min-height:44px;box-sizing:border-box}
+.hint{font-size:13px;font-weight:400;color:#5B6B66}
+</style></head>
+<body>
+<x-dc style="display: block;">
+
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh">
+  <aside style="flex: 1 1 240px; background: #0E2A24; padding: 20px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; gap: 12px; align-items: center; padding: 4px 6px">
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px">A</div>
+      <div>
+        <div style="color: #FFFFFF; font-weight: 700; font-size: 16px">Angels Resource Centre</div>
+        <div style="color: #A9C2BA; font-size: 12px">NPO Management System</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main" style="display: flex; flex-direction: column; gap: 2px">
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg><span style="flex: 1">Dashboard</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12l19-8-5 17-4-7z"></path></svg><span style="flex: 1">Travel Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v12H3zM3 11h18M16 15h2"></path></svg><span style="flex: 1">Finance Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg><span style="flex: 1">Document Control</span><span style="background: #2C4F47; color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px">127</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8"></path></svg><span style="flex: 1">Programme &amp; Impact</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg><span style="flex: 1">Planning</span></a>
+      
+        <a href="../index.html#/d/home-design" target="_top" class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4zM2 19h20"></path></svg><span style="flex: 1">Asset Management</span></a>
+      
+      <div style="color: #8FAAA2; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 18px 14px 6px">COMPLIANCE &amp; ADMIN</div>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path></svg><span>Audit Log</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8M2 21c0-4 3-6 7-6s7 2 7 6"></path></svg><span>User Management</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 2h9v10H3z"></path></svg><span>Projects</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 15a4 4 0 1 1 3-7h9v3h-2v2h-3v-2h-4"></path></svg><span>Permissions</span></a>
+      
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <a href="../index.html#/d/home-design" target="_top" style="font-size: 14px; text-decoration: none">← Asset Management</a>
+      <h1 style="margin: 0; font-size: 30px; font-weight: 700">New asset request</h1>
+    </div>
+
+    <ol aria-label="Progress" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px">
+      <li style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 999px; font-size: 14px; color: #4F605B"><span style="width: 24px; height: 24px; border-radius: 50%; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700">✓</span>Who is it for?</li>
+      <li aria-current="step" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #E2F1EC; border: 2px solid #1F7A65; border-radius: 999px; font-size: 14px; font-weight: 600"><span style="width: 24px; height: 24px; border-radius: 50%; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700">2</span>What is needed?</li>
+      <li style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 999px; font-size: 14px; color: #4F605B"><span style="width: 24px; height: 24px; border-radius: 50%; background: #ECEFEE; color: #4F605B; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700">3</span>Why and by when?</li>
+    </ol>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+      <form style="flex: 2 1 560px; min-width: 0; background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 16px; padding: 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+        <fieldset>
+          <legend>Asset category</legend>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
+            <label class="pick sel"><input type="radio" name="cat" checked="">Laptop</label>
+            <label class="pick"><input type="radio" name="cat">Screen / monitor</label>
+            <label class="pick"><input type="radio" name="cat">Printer</label>
+            <label class="pick"><input type="radio" name="cat">Accessory</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Request type</legend>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
+            <label class="pick"><input type="radio" name="type">New starter</label>
+            <label class="pick sel"><input type="radio" name="type" checked="">Replacement</label>
+            <label class="pick"><input type="radio" name="type">Additional item</label>
+            <label class="pick"><input type="radio" name="type">Loan (with return date)</label>
+          </div>
+        </fieldset>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; padding: 20px; background: #F7F9F8; border-radius: 12px">
+          <div style="font-size: 15px; font-weight: 600">About the laptop being replaced</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+            <label class="fl">Current asset<input type="text" value="ARC-LAP-2021-007 · 14-inch laptop" readonly=""><span class="hint">Filled in from the asset register</span></label>
+            <label class="fl">Reason<select><option>Broken</option><option selected="">Slow / too old</option><option>Lost</option><option>Stolen (case number needed)</option><option>Damaged (incident note needed)</option></select></label>
+          </div>
+          <label class="fl">What is wrong with it?<textarea rows="3">Design files take several minutes to open and the battery lasts under an hour.</textarea></label>
+        </div>
+
+        <fieldset>
+          <legend>Laptop tier</legend>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+            <label class="card"><input type="radio" name="tier"><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 600">Management</span><span style="font-size: 13px; color: #4F605B">CEO, HODs and HOF</span><span style="font-size: 13px; color: #5B6B66">Spec and price band set by Anton</span></span></label>
+            <label class="card"><input type="radio" name="tier"><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 600">Standard</span><span style="font-size: 13px; color: #4F605B">Office and programme staff</span><span style="font-size: 13px; color: #5B6B66">Spec and price band set by Anton</span></span></label>
+            <label class="card sel"><input type="radio" name="tier" checked=""><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 600">Design / Media</span><span style="font-size: 13px; color: #4F605B">Design and media roles</span><span style="align-self: flex-start; margin-top: 4px; font-size: 12px; font-weight: 600; color: #17694F; background: #E2F3EC; padding: 3px 8px; border-radius: 999px">Suggested for your position</span></span></label>
+          </div>
+          <p class="hint" style="margin: 10px 0 0">Anton confirms the tier at the technical check.</p>
+        </fieldset>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+          <label class="fl">Main use<select><option>Office and admin</option><option>Finance and reporting</option><option>Programme delivery and facilitation</option><option>Travel and field work</option><option selected="">Design and media</option><option>Other (explain)</option></select></label>
+          <fieldset>
+            <legend style="font-size: 14px; margin-bottom: 6px">Will the laptop travel with you?</legend>
+            <div style="display: flex; gap: 10px">
+              <label class="pick sel" style="flex: 1"><input type="radio" name="travel" checked="">Yes</label>
+              <label class="pick" style="flex: 1"><input type="radio" name="travel">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; border-top: 1px solid #EEF2F0; padding-top: 20px">
+          <a href="../index.html#/d/home-design" target="_top" style="padding: 12px 20px; border: 1px solid #C9D3D0; border-radius: 10px; text-decoration: none; color: #14201D; font-weight: 600; font-size: 15px">Back</a>
+          <a href="../index.html#/d/approval-design" target="_top" style="padding: 12px 20px; background: #1F7A65; border-radius: 10px; text-decoration: none; color: #FFFFFF; font-weight: 600; font-size: 15px">Next: Why and by when</a>
+        </div>
+      </form>
+
+      <aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">Your request</h2>
+          <dl style="margin: 0; display: grid; grid-template-columns: 110px 1fr; gap: 8px 12px; font-size: 14px">
+            <dt style="color: #5B6B66">For</dt><dd style="margin: 0">You · Design &amp; Media</dd>
+            <dt style="color: #5B6B66">Item</dt><dd style="margin: 0">Laptop · Design / Media</dd>
+            <dt style="color: #5B6B66">Type</dt><dd style="margin: 0">Replacement</dd>
+            <dt style="color: #5B6B66">Replaces</dt><dd style="margin: 0">ARC-LAP-2021-007</dd>
+          </dl>
+        </section>
+        <section style="background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">Who approves it</h2>
+          <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+            <li>Your line manager</li>
+            <li>Anton · technical check</li>
+            <li>Annemarie and Brent · pre-approval and budget</li>
+            <li>Finance · Jessica, then Gerald</li>
+            <li style="color: #5B6B66">CEO · only above the limit</li>
+          </ol>
+          <p style="margin: 0; font-size: 13px; color: #5B6B66">You get a Teams message at every step. Annemarie and Anton are kept informed.</p>
+        </section>
+        <section style="background: #FDF6E7; border: 1px solid #F0DDB0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">Need an account, email or software?</h2>
+          <p style="margin: 0; font-size: 14px; color: #4A3A12">Those are set up by PCZEN. Log them on the PCZEN portal and add the ticket number to this request.</p>
+          <a href="#" style="font-size: 14px; font-weight: 600; color: #6B4A00">Open the PCZEN portal</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+
+
+
+
+</body></html>

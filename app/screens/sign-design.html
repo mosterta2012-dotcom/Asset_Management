@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Collect and sign for your equipment</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14201D;background:#F4F6F5}
+a{color:#1A6B58}a:hover{color:#0F4A3D}
+.sec{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.sec h2{margin:0;font-size:18px;font-weight:600}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;padding:6px 0;cursor:pointer}
+.chk input{accent-color:#1F7A65;width:20px;height:20px;margin-top:1px;flex:none}
+.thumb{width:96px;height:72px;border-radius:10px;background:#E8EEEC;color:#4F605B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;text-align:center;flex:none}
+</style></head>
+<body>
+<x-dc style="display: block;">
+
+<div style="min-height: 100vh; display: flex; flex-direction: column">
+  <header style="background: #0E2A24; color: #FFFFFF; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center">
+    <div style="display: flex; gap: 12px; align-items: center">
+      <div style="width: 36px; height: 36px; border-radius: 8px; background: #1F7A65; display: flex; align-items: center; justify-content: center; font-weight: 700">A</div>
+      <div style="font-weight: 600; font-size: 15px">Angels Resource Centre · Asset Management</div>
+    </div>
+    <div style="font-size: 14px; color: #CFE0DA">Signed in as Sample Staff Member</div>
+  </header>
+
+  <main style="width: 100%; max-width: 820px; margin: 0 auto; padding: 32px 20px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h1 style="margin: 0; font-size: 28px; font-weight: 700">Collect and sign for your equipment</h1>
+      <p style="margin: 0; font-size: 15px; color: #4F605B">Handover AST-HO-2026-016 · delivered by courier 30 Nov 2026 · remote sign-in with Johan (PCZEN), 1 Dec 2026, 10:00</p>
+    </div>
+
+    <section class="sec">
+      <h2>Confirm delivery</h2>
+      <p style="margin: 0; font-size: 14px; color: #4F605B">Take photos of the box as it arrived, the item, and the serial number label.</p>
+      <label style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px; border: 2px dashed #C9D3D0; border-radius: 12px; font-size: 14px; color: #4F605B; cursor: pointer">
+        <span style="font-weight: 600; color: #14201D">Add photos</span>
+        <span>From your phone or computer</span>
+        <input type="file" accept="image/*" multiple="" style="position: absolute; width: 1px; height: 1px; opacity: 0">
+      </label>
+    </section>
+
+    <section class="sec">
+      <h2>Your equipment</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding-bottom: 14px; border-bottom: 1px solid #EEF2F0">
+        <div class="thumb">Photo: front</div>
+        <div class="thumb">Photo: serial</div>
+        <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
+          <div style="font-size: 16px; font-weight: 600">Laptop · Design / Media</div>
+          <div style="font-size: 14px; color: #4F605B">ARC-LAP-2026-015 · serial SN-XXXX-0157 · new</div>
+          <div style="font-size: 14px; color: #4F605B">With charger and carry bag</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+        <div class="thumb">Photo: mouse</div>
+        <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
+          <div style="font-size: 16px; font-weight: 600">Wireless mouse</div>
+          <div style="font-size: 14px; color: #4F605B">ARC-ACC-2026-010 · new</div>
+        </div>
+      </div>
+      <label class="chk"><input type="checkbox">The items match the photos and are in the condition shown.</label>
+    </section>
+
+    <section class="sec">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h2>Check that it works</h2>
+        <p style="margin: 0; font-size: 14px; color: #4F605B">Do this on the remote session with Johan before you sign.</p>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <label class="chk"><input type="checkbox">I signed in and approved the sign-in in Authenticator on my phone.</label>
+        <label class="chk"><input type="checkbox">Outlook opens with my email.</label>
+        <label class="chk"><input type="checkbox">Teams works.</label>
+        <label class="chk"><input type="checkbox">My files from the old laptop are on the new one.</label>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>Conditions of use</h2>
+      <p style="margin: 0; font-size: 15px">I will:</p>
+      <div style="display: flex; flex-direction: column">
+        <label class="chk"><input type="checkbox">Use it for Angels Resource Centres work.</label>
+        <label class="chk"><input type="checkbox">Keep it safe, especially when travelling, and never leave it visible in a vehicle.</label>
+        <label class="chk"><input type="checkbox">Not lend it to anyone, and not install software that PCZEN or Operations has not approved.</label>
+        <label class="chk"><input type="checkbox">Report loss, theft or damage in Asset Management within 24 hours (theft with a police case number).</label>
+        <label class="chk"><input type="checkbox">Protect personal information on the device in line with POPIA.</label>
+        <label class="chk"><input type="checkbox">Return it with all accessories on request, at the end of a loan, or on my last working day.</label>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #5B6B66; font-style: italic">[Liability for negligent loss or damage: wording to be approved by management]</p>
+    </section>
+
+    <section class="sec">
+      <h2>Your old laptop</h2>
+      <label class="chk"><input type="checkbox">I will courier ARC-LAP-2021-007 and its charger back to Anton using the return label in the box.</label>
+    </section>
+
+    <section class="sec" style="border: 2px solid #1F7A65">
+      <h2>Sign</h2>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Type your full name
+        <input type="text" style="font: inherit; font-size: 16px; font-weight: 400; padding: 12px; border: 1px solid #C9D3D0; border-radius: 10px; min-height: 44px; box-sizing: border-box">
+      </label>
+      <button type="button" style="font: inherit; font-size: 16px; font-weight: 600; padding: 14px 20px; border-radius: 10px; border: 0; background: #1F7A65; color: #FFFFFF; cursor: pointer; min-height: 48px">Sign with my Angels Microsoft account</button>
+      <p style="margin: 0; font-size: 13px; color: #5B6B66">Your name, the date and time, and your Microsoft sign-in are recorded. A locked PDF of the form is saved to the asset record and emailed to you. Anton and Annemarie then sign their parts.</p>
+    </section>
+  </main>
+</div>
+</x-dc>
+
+
+
+
+</body></html>

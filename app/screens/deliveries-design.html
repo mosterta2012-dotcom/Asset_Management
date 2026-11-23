@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Deliveries and collections</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14201D;background:#F4F6F5}
+a{color:#1A6B58}a:hover{color:#0F4A3D}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#E6EFEC;text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{background:#163C34;color:#FFFFFF}
+.nav a.on{background:#1F7A65;color:#FFFFFF}
+.tabs a{padding:12px 4px;margin-right:24px;text-decoration:none;color:#4F605B;font-weight:500;font-size:15px;border-bottom:2px solid transparent}
+.tabs a.on{color:#14201D;border-bottom-color:#1F7A65;font-weight:600}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:15px;font-weight:600;padding:0;margin-bottom:10px}
+.pick{display:flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid #DDE3E1;border-radius:10px;font-size:14px;cursor:pointer;background:#FFFFFF;min-height:44px;box-sizing:border-box}
+.pick.sel{border:2px solid #1F7A65;background:#F1F8F5;font-weight:600}
+.pick input,.chk input{accent-color:#1F7A65;width:18px;height:18px}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;min-height:36px}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.fl input,.fl select,.fl textarea{font:inherit;font-weight:400;font-size:14px;padding:11px 12px;border:1px solid #C9D3D0;border-radius:10px;background:#FFFFFF;color:#14201D;min-height:44px;box-sizing:border-box}
+.fl input[readonly]{background:#F1F4F3;color:#4F605B}
+.hint{font-size:13px;font-weight:400;color:#5B6B66}
+.auto{font-size:12px;font-weight:500;color:#17694F}
+.sec{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:18px}
+.sec h2{margin:0;font-size:18px;font-weight:600}
+.card{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card h2{margin:0;font-size:16px;font-weight:600}
+.tile{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:14px;padding:16px 20px;display:flex;flex-direction:column;gap:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.btn{font:inherit;font-size:15px;font-weight:600;padding:12px 20px;border-radius:10px;cursor:pointer;min-height:44px;text-decoration:none;display:inline-flex;align-items:center;box-sizing:border-box}
+.pri{background:#1F7A65;color:#FFFFFF;border:0}.pri:hover{color:#FFFFFF;background:#17604F}
+.sec2{background:#FFFFFF;color:#14201D;border:1px solid #C9D3D0}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.g{background:#E2F3EC;color:#17694F}.b{background:#E3EEFB;color:#1D4F91}.a{background:#FDF1DC;color:#8A5300}.r{background:#FBE4E2;color:#9B2C22}.n{background:#ECEFEE;color:#4F605B}
+th{text-align:left;font-size:12px;font-weight:600;color:#4F605B;text-transform:uppercase;letter-spacing:.04em;padding:11px 14px;border-bottom:1px solid #DDE3E1;background:#F9FBFA;white-space:nowrap}
+td{padding:13px 14px;border-bottom:1px solid #EEF2F0;font-size:14px;vertical-align:top}
+.row{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid #EEF2F0;border-radius:10px;font-size:14px}
+.ok{width:22px;height:22px;border-radius:50%;background:#1F7A65;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.no{width:22px;height:22px;border-radius:50%;background:#9B2C22;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.wait{width:22px;height:22px;border-radius:50%;border:2px solid #C9D3D0;box-sizing:border-box;flex:none}
+.note{font-size:14px;border-radius:12px;padding:14px 16px}
+dt{color:#5B6B66}dd{margin:0}
+</style></head>
+<body>
+<x-dc style="display: block;">
+
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh">
+  <aside style="flex: 1 1 240px; background: #0E2A24; padding: 20px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; gap: 12px; align-items: center; padding: 4px 6px">
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px">A</div>
+      <div>
+        <div style="color: #FFFFFF; font-weight: 700; font-size: 16px">Angels Resource Centre</div>
+        <div style="color: #A9C2BA; font-size: 12px">NPO Management System</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main" style="display: flex; flex-direction: column; gap: 2px">
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg><span style="flex: 1">Dashboard</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12l19-8-5 17-4-7z"></path></svg><span style="flex: 1">Travel Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v12H3zM3 11h18M16 15h2"></path></svg><span style="flex: 1">Finance Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg><span style="flex: 1">Document Control</span><span style="background: #2C4F47; color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px">127</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8"></path></svg><span style="flex: 1">Programme &amp; Impact</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg><span style="flex: 1">Planning</span></a>
+      
+        <a href="../index.html#/d/home-design" target="_top" class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4zM2 19h20"></path></svg><span style="flex: 1">Asset Management</span></a>
+      
+      <div style="color: #8FAAA2; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 18px 14px 6px">COMPLIANCE &amp; ADMIN</div>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path></svg><span>Audit Log</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8M2 21c0-4 3-6 7-6s7 2 7 6"></path></svg><span>User Management</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 2h9v10H3z"></path></svg><span>Projects</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 15a4 4 0 1 1 3-7h9v3h-2v2h-3v-2h-4"></path></svg><span>Permissions</span></a>
+      
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <div style="font-size: 13px; color: #5B6B66">Operations / Asset Management</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <h1 style="margin: 0; font-size: 28px; font-weight: 700">Deliveries and collections</h1>
+      </div>
+      <p style="margin: 0; font-size: 15px; color: #4F605B">Everything coming in or going out: suppliers, ZipPrint, couriers. Anton and the person who asked are notified at each step.</p>
+    </div>
+    <a href="#" class="btn pri">+ Log a delivery or collection</a>
+    </div>
+    <nav class="tabs" aria-label="Asset Management sections" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #DDE3E1">
+      <a href="../index.html#/d/home-design" target="_top">Requests</a>
+      <a href="../index.html#/d/approval-design" target="_top">My approvals (2)</a>
+      <a href="../index.html#/d/store-design" target="_top">Training &amp; marketing store</a>
+      <a href="../index.html#/d/deliveries-design" target="_top" class="on">Deliveries</a>
+      <a href="../index.html#/d/incident-design" target="_top">Incidents</a>
+      <a href="../index.html#/d/donations-design" target="_top">Donations</a>
+      <a href="../index.html#/d/register-design" target="_top">Asset register</a>
+      <a href="../index.html#/d/reports-design" target="_top">Reports</a>
+    </nav>
+    <section aria-label="Today" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+      <div class="card" style="border: 2px solid #1F7A65">
+        <div style="display: flex; justify-content: space-between; align-items: center"><h2>Today · Wed 9 Dec</h2><span class="pill g">3</span></div>
+        <div class="row"><span style="flex: 1"><b>In</b> · 3 laptops from [Supplier A]</span><span class="pill a">Expected</span></div>
+        <div class="row"><span style="flex: 1"><b>Collect</b> · banners at ZipPrint</span><span class="pill g">Ready</span></div>
+        <div class="row"><span style="flex: 1"><b>Out</b> · TB-02 by courier to venue</span><span class="pill b">Booked</span></div>
+      </div>
+      <div class="card">
+        <h2>Needs attention</h2>
+        <div class="row" style="border-color: #E8B4AE; background: #FDF3F2"><span class="no" aria-hidden="true">!</span><span style="flex: 1">Monitor delivery 2 days late · [Supplier B]</span></div>
+        <p class="hint" style="margin: 0">Anton is alerted daily until it arrives or the date is changed.</p>
+      </div>
+    </section>
+
+    <section style="background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 14px; overflow: hidden">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; padding: 16px 20px"><h2 style="margin: 0; font-size: 18px; font-weight: 600">Log</h2><span class="hint">Sample data</span></div>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; border-collapse: collapse; min-width: 1080px">
+          <thead><tr><th>Ref</th><th>Type</th><th>Company</th><th>Tracking / reference</th><th>For</th><th>Expected</th><th>Who</th><th>Status</th><th>Proof</th></tr></thead>
+          <tbody>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">LOG-0412</td><td>Delivery in</td><td>[Supplier A]</td><td style="font-family: ui-monospace, monospace; font-size: 13px">PO-2026-0457</td><td>AST-REQ-2026-011</td><td style="white-space: nowrap">9 Dec</td><td>Anton</td><td><span class="pill a">Expected</span></td><td>—</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">LOG-0411</td><td>Collection</td><td>ZipPrint</td><td style="font-family: ui-monospace, monospace; font-size: 13px">[Job no.]</td><td>Banner reprint · PR Briefing job</td><td style="white-space: nowrap">9 Dec</td><td>Anton</td><td><span class="pill g">Ready to collect</span></td><td>—</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">LOG-0410</td><td>Dispatch out</td><td>[Courier]</td><td style="font-family: ui-monospace, monospace; font-size: 13px">[Waybill no.]</td><td>BK-2026-016 · TB-02</td><td style="white-space: nowrap">9 Dec</td><td>Anton</td><td><span class="pill b">Booked</span></td><td>—</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">LOG-0405</td><td>Delivery in</td><td>[Supplier B]</td><td style="font-family: ui-monospace, monospace; font-size: 13px">PO-2026-0449</td><td>AST-REQ-2026-004 · monitors</td><td style="white-space: nowrap">7 Dec</td><td>Anton</td><td><span class="pill r">Late · 2 days</span></td><td>—</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">LOG-0401</td><td>Courier collection</td><td>[Courier]</td><td style="font-family: ui-monospace, monospace; font-size: 13px">[Waybill no.]</td><td>Return to [Supplier A]</td><td style="white-space: nowrap">4 Dec</td><td>Anton</td><td><span class="pill n">Collected</span></td><td>Waybill photo</td></tr>
+            
+              <tr><td style="font-weight: 600; white-space: nowrap">LOG-0398</td><td>Delivery in</td><td>[Supplier A]</td><td style="font-family: ui-monospace, monospace; font-size: 13px">PO-2026-0431</td><td>AST-REQ-2026-005</td><td style="white-space: nowrap">26 Nov</td><td>Anton</td><td><span class="pill n">Received</span></td><td>Delivery note photo</td></tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>Notifications</h2>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; border-collapse: collapse; min-width: 640px">
+          <thead><tr><th>When</th><th>Who is told</th></tr></thead>
+          <tbody>
+            <tr><td>Entry logged</td><td>Anton and the person who asked for it</td></tr>
+            <tr><td>Day before, and morning of</td><td>Anton (backup: Annemarie)</td></tr>
+            <tr><td>Ready for collection (e.g. ZipPrint)</td><td>Whoever is collecting</td></tr>
+            <tr><td>Arrived, collected or delivered (photo of delivery note or waybill)</td><td>The person who asked; linked request updates</td></tr>
+            <tr><td>Late</td><td>Anton and the person who asked, daily until resolved</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="hint" style="margin: 0">Later: ZipPrint and courier emails sent to a shared mailbox can update entries automatically, the same way as PCZEN's.</p>
+    </section>
+  </main>
+</div>
+</x-dc>
+
+
+
+
+</body></html>

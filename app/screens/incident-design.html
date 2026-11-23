@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Incident AST-INC-2026-003 — stolen laptop</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14201D;background:#F4F6F5}
+a{color:#1A6B58}a:hover{color:#0F4A3D}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#E6EFEC;text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{background:#163C34;color:#FFFFFF}
+.nav a.on{background:#1F7A65;color:#FFFFFF}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:14px;font-weight:600;padding:0;margin-bottom:8px}
+.pick{display:flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid #DDE3E1;border-radius:10px;font-size:14px;cursor:pointer;background:#FFFFFF;min-height:44px;box-sizing:border-box}
+.pick.sel{border:2px solid #1F7A65;background:#F1F8F5;font-weight:600}
+.pick input{accent-color:#1F7A65}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.fl input,.fl select{font:inherit;font-weight:400;font-size:14px;padding:11px 12px;border:1px solid #C9D3D0;border-radius:10px;background:#FFFFFF;color:#14201D;min-height:44px;box-sizing:border-box}
+.sec{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.sec h2{margin:0;font-size:18px;font-weight:600}
+dt{color:#5B6B66}dd{margin:0}
+th{text-align:left;font-size:12px;font-weight:600;color:#4F605B;text-transform:uppercase;letter-spacing:.04em;padding:10px 12px;border-bottom:1px solid #DDE3E1;background:#F9FBFA}
+td{padding:12px;border-bottom:1px solid #EEF2F0;font-size:14px;vertical-align:top}
+.row{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid #EEF2F0;border-radius:10px;font-size:14px}
+.ok{width:22px;height:22px;border-radius:50%;background:#1F7A65;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.wait{width:22px;height:22px;border-radius:50%;border:2px solid #C9D3D0;box-sizing:border-box;flex:none}
+.btn{font:inherit;font-size:15px;font-weight:600;padding:12px 20px;border-radius:10px;cursor:pointer;min-height:44px}
+</style></head>
+<body>
+<x-dc style="display: block;">
+
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh">
+  <aside style="flex: 1 1 240px; background: #0E2A24; padding: 20px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; gap: 12px; align-items: center; padding: 4px 6px">
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px">A</div>
+      <div>
+        <div style="color: #FFFFFF; font-weight: 700; font-size: 16px">Angels Resource Centre</div>
+        <div style="color: #A9C2BA; font-size: 12px">NPO Management System</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main" style="display: flex; flex-direction: column; gap: 2px">
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg><span style="flex: 1">Dashboard</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12l19-8-5 17-4-7z"></path></svg><span style="flex: 1">Travel Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v12H3zM3 11h18M16 15h2"></path></svg><span style="flex: 1">Finance Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg><span style="flex: 1">Document Control</span><span style="background: #2C4F47; color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px">127</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8"></path></svg><span style="flex: 1">Programme &amp; Impact</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg><span style="flex: 1">Planning</span></a>
+      
+        <a href="../index.html#/d/home-design" target="_top" class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4zM2 19h20"></path></svg><span style="flex: 1">Asset Management</span></a>
+      
+      <div style="color: #8FAAA2; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 18px 14px 6px">COMPLIANCE &amp; ADMIN</div>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path></svg><span>Audit Log</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8M2 21c0-4 3-6 7-6s7 2 7 6"></path></svg><span>User Management</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 2h9v10H3z"></path></svg><span>Projects</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 15a4 4 0 1 1 3-7h9v3h-2v2h-3v-2h-4"></path></svg><span>Permissions</span></a>
+      
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <a href="../index.html#/d/home-design" target="_top" style="font-size: 14px; text-decoration: none">← Asset Management</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <h1 style="margin: 0; font-size: 28px; font-weight: 700">AST-INC-2026-003 · Stolen laptop</h1>
+        <span style="padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; background: #FDF1DC; color: #8A5300">Open · claim pack in progress</span>
+      </div>
+      <div style="font-size: 14px; color: #4F605B">ARC-LAP-2026-015 · Design &amp; Media · reported 3 Dec 2026, 18:02 (within 24 hours)</div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+      <div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <section class="sec">
+          <h2>What was reported</h2>
+          <dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px 24px; font-size: 14px">
+            <div><dt>When</dt><dd>3 Dec 2026, about 17:30</dd></div>
+            <div><dt>Where</dt><dd>In a vehicle, locked boot</dd></div>
+            <div><dt>Police case</dt><dd>CAS ___/12/2026 · [station]</dd></div>
+            <div><dt>Information on it</dt><dd>Not sure</dd></div>
+            <div><dt>Loan laptop needed</dt><dd>Yes</dd></div>
+            <div><dt>Handed over</dt><dd><a href="../index.html#/d/handover-design" target="_top">AST-HO-2026-016</a> · signed 1 Dec 2026</dd></div>
+          </dl>
+        </section>
+
+        <section class="sec">
+          <h2>Alerts sent</h2>
+          <div style="overflow-x: auto">
+            <table style="width: 100%; border-collapse: collapse; min-width: 560px">
+              <thead><tr><th>Who</th><th>Why</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight: 600">PCZEN</td><td>Lock and wipe the device, reset the password · ticket T20261203.0005</td><td><span style="color: #17694F; font-weight: 600">Locked 3 Dec, 18:40</span></td></tr>
+                <tr><td style="font-weight: 600">POPIA Information Officer</td><td>Information on the device may be exposed</td><td><span style="color: #8A5300; font-weight: 600">Reviewing</span></td></tr>
+                <tr><td style="font-weight: 600">Line manager</td><td>Staff member's equipment incident</td><td><span style="color: #17694F; font-weight: 600">Seen</span></td></tr>
+                <tr><td style="font-weight: 600">Anton and Annemarie</td><td>Every incident</td><td><span style="color: #17694F; font-weight: 600">Seen</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="sec" style="border: 2px solid #1F7A65">
+          <h2>Anton's assessment</h2>
+          <fieldset>
+            <legend>Outcome</legend>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px">
+              <label class="pick"><input type="radio" name="o">Repair</label>
+              <label class="pick"><input type="radio" name="o">Replace, keep old</label>
+              <label class="pick sel"><input type="radio" name="o" checked="">Write off and replace</label>
+            </div>
+          </fieldset>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+            <label class="fl">Loan laptop issued<input type="text" value="ARC-LAP-2021-007 · 4 Dec 2026 · AST-HO-2026-018"></label>
+            <label class="fl">Replacement request<input type="text" value="AST-REQ-2026-009 · created and linked" readonly="" style="background: #F1F4F3"></label>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h2>Insurance claim pack</h2>
+            <p style="margin: 0; font-size: 14px; color: #4F605B">The system gathers these from the asset record. Missing items are flagged.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div class="row"><span class="ok" aria-hidden="true">✓</span><span style="flex: 1">Invoice INV-88231 (proof of ownership)</span></div>
+            <div class="row"><span class="ok" aria-hidden="true">✓</span><span style="flex: 1">Serial number and asset register entry</span></div>
+            <div class="row"><span class="ok" aria-hidden="true">✓</span><span style="flex: 1">Photos on receipt, 26 Nov 2026</span></div>
+            <div class="row"><span class="ok" aria-hidden="true">✓</span><span style="flex: 1">Signed handover form AST-HO-2026-016</span></div>
+            <div class="row"><span class="ok" aria-hidden="true">✓</span><span style="flex: 1">Incident report and PCZEN lock confirmation</span></div>
+            <div class="row" style="border-color: #F0DDB0; background: #FDF8EC"><span class="wait" aria-hidden="true"></span><span style="flex: 1">Police case number confirmed</span><span style="font-size: 13px; color: #8A5300; font-weight: 600">Waiting on staff member</span></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+            <label class="fl">Claim number<input type="text" placeholder="From the broker"></label>
+            <label class="fl">Claim status<select><option selected="">Not yet submitted</option><option>Submitted</option><option>Paid</option><option>Declined</option></select></label>
+          </div>
+          <div><button type="button" class="btn" style="background: #FFFFFF; color: #14201D; border: 1px solid #C9D3D0">Download claim pack (PDF)</button></div>
+        </section>
+
+        <section class="sec">
+          <h2>Close-out</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+            <label class="fl">Write-off approval (HOF)<input type="text" value="Waiting" readonly="" style="background: #F1F4F3"></label>
+            <label class="fl">Liability review (management)<select><option selected="">Not yet reviewed</option><option>No negligence</option><option>Negligence: apply policy</option></select></label>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px">
+            <button type="button" class="btn" style="background: #1F7A65; color: #FFFFFF; border: 0">Send to Head of Finance</button>
+            <button type="button" class="btn" style="background: #FFFFFF; color: #14201D; border: 1px solid #C9D3D0">Save</button>
+          </div>
+        </section>
+      </div>
+
+      <aside style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">History of this laptop</h2>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px">
+            <li style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Received and registered</span><span style="color: #5B6B66; font-size: 13px">26 Nov 2026 · AST-REQ-2026-005</span></li>
+            <li style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">PCZEN setup · T20261126.0002</span><span style="color: #5B6B66; font-size: 13px">26 to 30 Nov 2026 · returned without mouse</span></li>
+            <li style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Handed over and signed</span><span style="color: #5B6B66; font-size: 13px">1 Dec 2026 · AST-HO-2026-016</span></li>
+            <li style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600; color: #9B2C22">Reported stolen</span><span style="color: #5B6B66; font-size: 13px">3 Dec 2026 · this incident</span></li>
+            <li style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">PCZEN lock and wipe · T20261203.0005</span><span style="color: #5B6B66; font-size: 13px">3 Dec 2026</span></li>
+          </ul>
+        </section>
+        <section style="background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">Feeds the risk register</h2>
+          <p style="margin: 0; font-size: 14px">Counted under "Theft during travel or field work" in the Asset Risk Assessment and the monthly report.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+
+
+
+
+</body></html>

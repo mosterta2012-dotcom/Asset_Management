@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>New asset request — why, when and who pays</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14201D;background:#F4F6F5}
+a{color:#1A6B58}a:hover{color:#0F4A3D}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#E6EFEC;text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{background:#163C34;color:#FFFFFF}
+.nav a.on{background:#1F7A65;color:#FFFFFF}
+.tabs a{padding:12px 4px;margin-right:24px;text-decoration:none;color:#4F605B;font-weight:500;font-size:15px;border-bottom:2px solid transparent}
+.tabs a.on{color:#14201D;border-bottom-color:#1F7A65;font-weight:600}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:15px;font-weight:600;padding:0;margin-bottom:10px}
+.pick{display:flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid #DDE3E1;border-radius:10px;font-size:14px;cursor:pointer;background:#FFFFFF;min-height:44px;box-sizing:border-box}
+.pick.sel{border:2px solid #1F7A65;background:#F1F8F5;font-weight:600}
+.pick input,.chk input{accent-color:#1F7A65;width:18px;height:18px}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;min-height:36px}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.fl input,.fl select,.fl textarea{font:inherit;font-weight:400;font-size:14px;padding:11px 12px;border:1px solid #C9D3D0;border-radius:10px;background:#FFFFFF;color:#14201D;min-height:44px;box-sizing:border-box}
+.fl input[readonly]{background:#F1F4F3;color:#4F605B}
+.hint{font-size:13px;font-weight:400;color:#5B6B66}
+.auto{font-size:12px;font-weight:500;color:#17694F}
+.sec{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:18px}
+.sec h2{margin:0;font-size:18px;font-weight:600}
+.card{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card h2{margin:0;font-size:16px;font-weight:600}
+.tile{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:14px;padding:16px 20px;display:flex;flex-direction:column;gap:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.btn{font:inherit;font-size:15px;font-weight:600;padding:12px 20px;border-radius:10px;cursor:pointer;min-height:44px;text-decoration:none;display:inline-flex;align-items:center;box-sizing:border-box}
+.pri{background:#1F7A65;color:#FFFFFF;border:0}.pri:hover{color:#FFFFFF;background:#17604F}
+.sec2{background:#FFFFFF;color:#14201D;border:1px solid #C9D3D0}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.g{background:#E2F3EC;color:#17694F}.b{background:#E3EEFB;color:#1D4F91}.a{background:#FDF1DC;color:#8A5300}.r{background:#FBE4E2;color:#9B2C22}.n{background:#ECEFEE;color:#4F605B}
+th{text-align:left;font-size:12px;font-weight:600;color:#4F605B;text-transform:uppercase;letter-spacing:.04em;padding:11px 14px;border-bottom:1px solid #DDE3E1;background:#F9FBFA;white-space:nowrap}
+td{padding:13px 14px;border-bottom:1px solid #EEF2F0;font-size:14px;vertical-align:top}
+.row{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid #EEF2F0;border-radius:10px;font-size:14px}
+.ok{width:22px;height:22px;border-radius:50%;background:#1F7A65;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.no{width:22px;height:22px;border-radius:50%;background:#9B2C22;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.wait{width:22px;height:22px;border-radius:50%;border:2px solid #C9D3D0;box-sizing:border-box;flex:none}
+.note{font-size:14px;border-radius:12px;padding:14px 16px}
+dt{color:#5B6B66}dd{margin:0}
+</style></head>
+<body>
+<x-dc style="display: block;">
+
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh">
+  <aside style="flex: 1 1 240px; background: #0E2A24; padding: 20px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; gap: 12px; align-items: center; padding: 4px 6px">
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px">A</div>
+      <div>
+        <div style="color: #FFFFFF; font-weight: 700; font-size: 16px">Angels Resource Centre</div>
+        <div style="color: #A9C2BA; font-size: 12px">NPO Management System</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main" style="display: flex; flex-direction: column; gap: 2px">
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg><span style="flex: 1">Dashboard</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12l19-8-5 17-4-7z"></path></svg><span style="flex: 1">Travel Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v12H3zM3 11h18M16 15h2"></path></svg><span style="flex: 1">Finance Management</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg><span style="flex: 1">Document Control</span><span style="background: #2C4F47; color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px">127</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8"></path></svg><span style="flex: 1">Programme &amp; Impact</span></a>
+      
+        <a href="#" class=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg><span style="flex: 1">Planning</span></a>
+      
+        <a href="../index.html#/d/home-design" target="_top" class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4zM2 19h20"></path></svg><span style="flex: 1">Asset Management</span></a>
+      
+      <div style="color: #8FAAA2; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 18px 14px 6px">COMPLIANCE &amp; ADMIN</div>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path></svg><span>Audit Log</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8M2 21c0-4 3-6 7-6s7 2 7 6"></path></svg><span>User Management</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 2h9v10H3z"></path></svg><span>Projects</span></a>
+      
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 15a4 4 0 1 1 3-7h9v3h-2v2h-3v-2h-4"></path></svg><span>Permissions</span></a>
+      
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <a href="../index.html#/d/home-design" target="_top" style="font-size: 14px; text-decoration: none">← Asset Management</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <h1 style="margin: 0; font-size: 28px; font-weight: 700">New asset request</h1>
+        <span class="pill b" style="font-size: 13px; padding: 5px 12px">Step 3 of 3</span>
+      </div>
+    </div>
+    </div>
+    <ol aria-label="Progress" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px">
+      <li style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 999px; font-size: 14px; color: #4F605B"><span class="ok" aria-hidden="true">✓</span>Who is it for?</li>
+      <li style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 999px; font-size: 14px; color: #4F605B"><span class="ok" aria-hidden="true">✓</span>What is needed?</li>
+      <li aria-current="step" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #E2F1EC; border: 2px solid #1F7A65; border-radius: 999px; font-size: 14px; font-weight: 600"><span style="width: 22px; height: 22px; border-radius: 50%; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700">3</span>Why, when and who pays?</li>
+    </ol>
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+      <form style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <section class="sec">
+          <h2>Why and by when?</h2>
+          <label class="fl">Business reason<textarea rows="2">Three facilitators need laptops to run the Scatec E4C sessions in the new cohort.</textarea></label>
+          <div class="grid"><label class="fl">Needed by<input type="text" value="15 Jan 2027"></label></div>
+        </section>
+
+        <section class="sec">
+          <fieldset>
+            <legend>Who pays?</legend>
+            <div class="grid">
+              <label class="pick"><input type="radio" name="pay">Angels (operational budget)</label>
+              <label class="pick sel"><input type="radio" name="pay" checked="">Client / project</label>
+            </div>
+          </fieldset>
+          <div style="display: flex; flex-direction: column; gap: 16px; padding: 20px; background: #F7F9F8; border-radius: 12px">
+            <div class="grid">
+              <label class="fl">Client programme<select><option selected="">Scatec E4C</option><option>Scatec Y4C</option><option>Noblesfontein (NWF) E4C</option><option>Seriti Green</option><option>Other</option></select></label>
+              <label class="fl">Project code<input type="text" value="[Project code]"></label>
+              <label class="fl">Budget line<input type="text" value="Equipment"></label>
+              <label class="fl">Contract or client PO reference<input type="text" placeholder="From the client agreement"></label>
+            </div>
+            <fieldset>
+              <legend style="font-size: 14px">Who owns it after the project?</legend>
+              <div class="grid">
+                <label class="pick"><input type="radio" name="own">Angels</label>
+                <label class="pick sel"><input type="radio" name="own" checked="">The client</label>
+                <label class="pick"><input type="radio" name="own">A beneficiary</label>
+              </div>
+              <p class="hint" style="margin: 8px 0 0">Check the client agreement. It should say who owns, who insures and what happens at project end.</p>
+            </fieldset>
+            <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 12px">
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center"><span style="font-size: 14px; font-weight: 600">Insurance</span><span class="pill b">Client insures</span><span class="auto">Set automatically for client-funded items</span></div>
+              <p style="margin: 0; font-size: 14px; color: #4F605B">Client-funded items are not added to Angels' insurance. Angels cover needs HOF approval and a recorded client contribution.</p>
+              <a href="#" style="font-size: 14px; font-weight: 600">Ask for Angels cover with a client contribution</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec">
+          <fieldset>
+            <legend>Where should it be delivered?</legend>
+            <div class="grid">
+              <label class="pick sel"><input type="radio" name="del" checked="">Via Anton, then courier to me</label>
+              <label class="pick"><input type="radio" name="del">Straight to me (approval needed)</label>
+              <label class="pick"><input type="radio" name="del">To a client site</label>
+            </div>
+          </fieldset>
+          <div class="grid"><label class="fl">Courier to<input type="text" placeholder="Delivery address (used for this delivery only)"></label></div>
+          <p class="hint" style="margin: 0">Items go to Anton first for registering, photos and PCZEN preparation, then by courier with tracking. Your address is not kept in the register. You confirm receipt with photos.</p>
+        </section>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between">
+          <a href="../index.html#/d/request-design" target="_top" class="btn sec2">Back</a>
+          <a href="../index.html#/d/order-design" target="_top" class="btn pri">Submit request</a>
+        </div>
+      </form>
+
+      <aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section class="card">
+          <h2>Your request</h2>
+          <dl style="margin: 0; display: grid; grid-template-columns: 110px 1fr; gap: 8px 12px; font-size: 14px">
+            <dt>Item</dt><dd>Laptop · Standard × 3</dd>
+            <dt>For</dt><dd>E4C facilitators</dd>
+            <dt>Paid by</dt><dd>Scatec E4C</dd>
+            <dt>Owner after</dt><dd>The client</dd>
+          </dl>
+        </section>
+        <section class="card">
+          <h2>Who approves it</h2>
+          <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+            <li>Line manager</li>
+            <li style="font-weight: 600">Programme budget holder · confirms the budget line</li>
+            <li>Anton · technical check</li>
+            <li>Annemarie and Brent · pre-approval against the project budget</li>
+            <li>Finance · Jessica, then Gerald</li>
+            <li style="color: #5B6B66">Client, if the agreement requires it</li>
+          </ol>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+
+
+
+
+</body></html>

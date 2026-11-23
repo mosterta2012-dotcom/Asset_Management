@@ -1,0 +1,20 @@
+# Minimal Supabase CLI config. Run `supabase init` locally if the CLI asks for a fuller file.
+project_id = "angels-asset-management"
+
+[db]
+major_version = 15
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+
+# Sign-in with the Angels Microsoft (Entra ID) accounts – fill in after registering the app in Entra
+[auth.external.azure]
+enabled = false
+client_id = "env(AZURE_CLIENT_ID)"
+secret = "env(AZURE_SECRET)"
+url = "https://login.microsoftonline.com/[tenant-id]/v2.0"

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Receive and set up — AST-REQ-2026-005</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14201D;background:#F4F6F5}
+a{color:#1A6B58}a:hover{color:#0F4A3D}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#E6EFEC;text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{background:#163C34;color:#FFFFFF}
+.nav a.on{background:#1F7A65;color:#FFFFFF}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:14px;font-weight:600;padding:0;margin-bottom:8px}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.fl input,.fl select,.fl textarea{font:inherit;font-weight:400;font-size:14px;padding:11px 12px;border:1px solid #C9D3D0;border-radius:10px;background:#FFFFFF;color:#14201D;min-height:44px;box-sizing:border-box}
+.fl input[readonly]{background:#F1F4F3;color:#4F605B}
+.auto{font-size:12px;font-weight:500;color:#17694F}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;min-height:36px}
+.chk input{accent-color:#1F7A65;width:18px;height:18px}
+.file{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid #DDE3E1;border-radius:12px;background:#FFFFFF}
+.btn{font:inherit;font-size:15px;font-weight:600;padding:12px 20px;border-radius:10px;cursor:pointer;min-height:44px;text-decoration:none;display:inline-flex;align-items:center}
+.sec{background:#FFFFFF;border:1px solid #DDE3E1;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:18px}
+.sec h2{margin:0;font-size:18px;font-weight:600}
+.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;height:120px;border-radius:12px;background:#E8EEEC;color:#4F605B;font-size:13px;font-weight:600}
+.row{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid #EEF2F0;border-radius:10px;font-size:14px}
+.ok{width:22px;height:22px;border-radius:50%;background:#1F7A65;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.no{width:22px;height:22px;border-radius:50%;background:#9B2C22;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh">
+  <aside style="flex: 1 1 240px; background: #0E2A24; padding: 20px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; gap: 12px; align-items: center; padding: 4px 6px">
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #1F7A65; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px">A</div>
+      <div>
+        <div style="color: #FFFFFF; font-weight: 700; font-size: 16px">Angels Resource Centre</div>
+        <div style="color: #A9C2BA; font-size: 12px">NPO Management System</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main" style="display: flex; flex-direction: column; gap: 2px">
+      <sc-for list="{{navMain}}" as="n" hint-placeholder-count="7">
+        <a href="{{n.href}}" class="{{n.cls}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{n.d}}"></path></svg><span style="flex: 1">{{n.name}}</span><sc-if value="{{n.badge}}" hint-placeholder-val="{{false}}"><span style="background: #2C4F47; color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px">{{n.badge}}</span></sc-if></a>
+      </sc-for>
+      <div style="color: #8FAAA2; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 18px 14px 6px">COMPLIANCE &amp; ADMIN</div>
+      <sc-for list="{{navAdmin}}" as="n" hint-placeholder-count="4">
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{n.d}}"></path></svg><span>{{n.name}}</span></a>
+      </sc-for>
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <a href="Main.dc.html" style="font-size: 14px; text-decoration: none">← Asset Management</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <h1 style="margin: 0; font-size: 28px; font-weight: 700">AST-REQ-2026-005 · Receive and set up</h1>
+        <span style="padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; background: #FBE4E2; color: #9B2C22">Returned incomplete · mouse missing</span>
+      </div>
+      <div style="font-size: 14px; color: #4F605B">Laptop, Design / Media · approved 24 Nov 2026 · delivered to Anton 26 Nov 2026</div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+      <form style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <section class="sec">
+          <h2>1. Quote and invoice</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+            <div class="file"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A6B58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg><div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 600">Quote · Q-1043.pdf</div><div style="font-size: 12px; color: #5B6B66">From the Payment Request PR-2026-0301, 21 Nov 2026</div></div></div>
+            <div class="file"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A6B58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg><div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 600">Invoice · INV-88231.pdf</div><div style="font-size: 12px; color: #5B6B66">Uploaded by Anton, 26 Nov 2026</div></div></div>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h2>2. Item details</h2>
+            <p style="margin: 0; font-size: 14px; color: #4F605B">Green labels came from the request and the invoice. Check them and fill in the rest.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+            <label class="fl">Asset number <span class="auto">Created by the system</span><input type="text" value="ARC-LAP-2026-015" readonly></label>
+            <label class="fl">Item and tier <span class="auto">From the request</span><input type="text" value="Laptop · Design / Media" readonly></label>
+            <label class="fl">Make and model<input type="text" value="[Make and model from invoice]"></label>
+            <label class="fl">Serial number<input type="text" value="SN-XXXX-0157"></label>
+            <label class="fl">Invoice number <span class="auto">Read from the invoice</span><input type="text" value="INV-88231"></label>
+            <label class="fl">Warranty ends<input type="text" value="Nov 2029"></label>
+          </div>
+          <fieldset>
+            <legend>Accessories that came with it</legend>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 16px">
+              <label class="chk"><input type="checkbox" checked>Charger</label>
+              <label class="chk"><input type="checkbox" checked>Carry bag</label>
+              <label class="chk"><input type="checkbox" checked>Wireless mouse (ARC-ACC-2026-010)</label>
+              <label class="chk"><input type="checkbox">Other</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="sec">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h2>3. Photos on receipt</h2>
+            <p style="margin: 0; font-size: 14px; color: #4F605B">Anton takes these when the item arrives. They go on the asset record and the handover form.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+            <div class="ph"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M8 6l2-3h4l2 3M12 10a3 3 0 1 0 0 6a3 3 0 1 0 0-6"></path></svg>Front, lid closed</div>
+            <div class="ph"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M8 6l2-3h4l2 3M12 10a3 3 0 1 0 0 6a3 3 0 1 0 0-6"></path></svg>Serial number label</div>
+            <div class="ph"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M8 6l2-3h4l2 3M12 10a3 3 0 1 0 0 6a3 3 0 1 0 0-6"></path></svg>Accessories laid out</div>
+            <label class="ph" style="background: #FFFFFF; border: 2px dashed #C9D3D0; cursor: pointer">+ Add photo<span style="font-weight: 400">Marks or damage</span><input type="file" accept="image/*" style="position: absolute; width: 1px; height: 1px; opacity: 0"></label>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h2>4. Prepared by PCZEN</h2>
+            <p style="margin: 0; font-size: 14px; color: #4F605B">Everything that does not need the staff member: updates, Office and software, company settings, moving files. The Authenticator sign-in happens in the remote session after the courier delivers.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+            <label class="fl">PCZEN ticket number<input type="text" value="T20261126.0002"></label>
+            <label class="fl">Handed to PCZEN<input type="text" value="26 Nov 2026 · Johan"></label>
+            <label class="fl">Returned by PCZEN<input type="text" value="30 Nov 2026"></label>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 14px 16px; background: #FDF1DC; border-radius: 12px">
+            <div style="font-size: 28px; font-weight: 700; color: #8A5300">4 days</div>
+            <div style="font-size: 14px; color: #4A3A12">with PCZEN · agreed turnaround [X] working days · counted on the PCZEN performance report</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="font-size: 14px; font-weight: 600">Items sent and returned</div>
+            <div class="row"><span class="ok" aria-hidden="true">✓</span><span style="flex: 1">Laptop ARC-LAP-2026-015</span><span style="color: #17694F; font-size: 13px; font-weight: 600">Returned</span></div>
+            <div class="row"><span class="ok" aria-hidden="true">✓</span><span style="flex: 1">Charger and carry bag</span><span style="color: #17694F; font-size: 13px; font-weight: 600">Returned</span></div>
+            <div class="row" style="border-color: #E8B4AE; background: #FDF3F2"><span class="no" aria-hidden="true">!</span><span style="flex: 1">Wireless mouse ARC-ACC-2026-010</span><span style="color: #9B2C22; font-size: 13px; font-weight: 600">Missing · query sent to PCZEN 30 Nov</span></div>
+          </div>
+        </section>
+
+        <section class="sec" style="border: 2px solid #1F7A65">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h2>5. Anton's check before handover</h2>
+            <p style="margin: 0; font-size: 14px; color: #4F605B">The handover can only be booked when every line is ticked.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px 16px">
+            <label class="chk"><input type="checkbox" checked>Windows updates done</label>
+            <label class="chk"><input type="checkbox" checked>Office and design software installed</label>
+            <label class="chk"><input type="checkbox" checked>Company settings, Wi-Fi and printers</label>
+            <label class="chk"><input type="checkbox" checked>Files moved from ARC-LAP-2021-007</label>
+            <label class="chk" style="color: #9B2C22; font-weight: 600"><input type="checkbox">All accessories present</label>
+          </div>
+          <div style="font-size: 14px; color: #9B2C22; background: #FDF3F2; border-radius: 10px; padding: 12px 14px">Not ready for handover: 1 item missing. Annemarie and Anton are reminded daily until it is resolved.</div>
+        </section>
+
+        <section class="sec">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h2>6. Courier and remote handover</h2>
+            <p style="margin: 0; font-size: 14px; color: #4F605B">Anton photographs and packs the item and couriers it to the staff member. On arrival they confirm receipt with photos, then do a 15-minute remote session with Johan: sign in, approve in Authenticator, check Outlook and Teams, and sign on screen.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+            <label class="fl">Courier and waybill<input type="text" value="[Courier] · [waybill no.]"></label>
+            <label class="fl">Remote sign-in<input type="text" value="1 Dec 2026, 10:00 · Johan (PCZEN)"></label>
+          </div>
+        </section>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <button type="button" class="btn" style="background: #FFFFFF; color: #14201D; border: 1px solid #C9D3D0">Save</button>
+          <button type="button" class="btn" disabled style="background: #C9D3D0; color: #4F605B; border: 0; cursor: not-allowed">Dispatch by courier (check incomplete)</button>
+          <a href="Sign.dc.html" style="font-size: 14px; align-self: center">Preview the staff member's signing screen</a>
+        </div>
+      </form>
+
+      <aside style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border: 1px solid #DDE3E1; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">Progress</h2>
+          <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+            <sc-for list="{{steps}}" as="s" hint-placeholder-count="10">
+              <li style="display: flex; gap: 12px">
+                <div style="display: flex; flex-direction: column; align-items: center">
+                  <span style="{{s.dot}}"></span>
+                  <span style="width: 2px; flex: 1; min-height: 18px; background: #DDE3E1"></span>
+                </div>
+                <div style="padding-bottom: 14px; display: flex; flex-direction: column; gap: 2px">
+                  <span style="{{s.nameStyle}}">{{s.name}}</span>
+                  <span style="font-size: 13px; color: #5B6B66">{{s.note}}</span>
+                </div>
+              </li>
+            </sc-for>
+          </ol>
+        </section>
+        <section style="background: #E2F3EC; border: 1px solid #B9DFD0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">When the check is complete</h2>
+          <p style="margin: 0; font-size: 14px">Anton couriers the item, the remote sign-in is booked, the form is filled in with every detail and the photos, and the staff member gets a Teams link to review and sign on screen.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2150}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const dot = (bg, ring) => 'width:14px;height:14px;border-radius:50%;margin-top:3px;box-sizing:border-box;background:' + bg + ';border:2px solid ' + ring;
+    const done = { dot: dot('#1F7A65', '#1F7A65'), nameStyle: 'font-size:14px;font-weight:600' };
+    const now = { dot: dot('#FFFFFF', '#9B2C22'), nameStyle: 'font-size:14px;font-weight:700;color:#9B2C22' };
+    const next = { dot: dot('#FFFFFF', '#C9D3D0'), nameStyle: 'font-size:14px;font-weight:500;color:#4F605B' };
+    return {
+      navMain: [
+        { name: 'Dashboard', href: '#', cls: '', d: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z' },
+        { name: 'Travel Management', href: '#', cls: '', d: 'M2 12l19-8-5 17-4-7z' },
+        { name: 'Finance Management', href: '#', cls: '', d: 'M3 7h18v12H3zM3 11h18M16 15h2' },
+        { name: 'Document Control', href: '#', cls: '', d: 'M7 3h7l5 5v13H7zM14 3v5h5', badge: '127' },
+        { name: 'Programme & Impact', href: '#', cls: '', d: 'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8' },
+        { name: 'Planning', href: '#', cls: '', d: 'M4 6h16v14H4zM4 10h16M8 3v5M16 3v5' },
+        { name: 'Asset Management', href: 'Main.dc.html', cls: 'on', d: 'M4 5h16v11H4zM2 19h20' }
+      ],
+      navAdmin: [
+        { name: 'Audit Log', d: 'M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z' },
+        { name: 'User Management', d: 'M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8M2 21c0-4 3-6 7-6s7 2 7 6' },
+        { name: 'Projects', d: 'M3 7h7l2 2h9v10H3z' },
+        { name: 'Permissions', d: 'M8 15a4 4 0 1 1 3-7h9v3h-2v2h-3v-2h-4' }
+      ],
+      steps: [
+        Object.assign({ name: 'Submitted', note: '18 Nov 2026' }, done),
+        Object.assign({ name: 'Line manager approved', note: '19 Nov 2026' }, done),
+        Object.assign({ name: 'Technical check · Anton', note: 'Buy new · 23 Nov 2026' }, done),
+        Object.assign({ name: 'Pre-approved · Annemarie and Brent', note: '21 Nov 2026' }, done),
+        Object.assign({ name: 'Finance approved · Jessica, Gerald', note: '24 Nov 2026' }, done),
+        Object.assign({ name: 'Ordered · Anton', note: 'Quote Q-1043 · 24 Nov 2026' }, done),
+        Object.assign({ name: 'Received and registered', note: 'Invoice and photos · 26 Nov 2026' }, done),
+        Object.assign({ name: 'Prepared by PCZEN', note: '26 to 30 Nov 2026 · 4 days' }, done),
+        Object.assign({ name: 'Anton’s check', note: 'Mouse missing · waiting on PCZEN' }, now),
+        Object.assign({ name: 'Couriered to staff member', note: 'Once the check passes' }, next),
+        Object.assign({ name: 'Remote sign-in and e-signature', note: 'With Johan (PCZEN)' }, next),
+        Object.assign({ name: 'Old laptop couriered back', note: 'ARC-LAP-2021-007' }, next)
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
